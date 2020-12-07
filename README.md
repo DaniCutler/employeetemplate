@@ -8,3 +8,7 @@ so that I have quick access to emails and GitHub profiles
 
 Uses Inquirer npm package to prompt user for info
 runs as a Node CLI to gather info for each employee
+
+
+working link to a demo video:
+https://drive.google.com/file/d/1x5F8n0HNWMP4OBDFm6_9YzPQJ1hnjI1F/view
