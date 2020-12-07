@@ -13,7 +13,7 @@ const render = require("./lib/htmlRenderer");
 
 // Write code to use inquirer to gather information about the development team members,
 // and to create objects for each team member (using the correct classes as blueprints!)
-const memberType;
+var memberType;
 const employeeArr = [];
 
 const managerQuestions = [{
@@ -30,7 +30,7 @@ const managerQuestions = [{
     message: "What is your manager's email?"
 },{
     type:"input",
-    name: "specific",
+    name: "office",
     message: "What is your manager's office number?"
 },{
     type: "list",
@@ -53,7 +53,7 @@ const engineerQuestions = [{
     message: "What is your engineer's email?"
 },{
     type:"input",
-    name: "specific",
+    name: "user",
     message: "What is your engineer's Github user name?"
 },{
     type: "list",
@@ -76,7 +76,7 @@ const internQuestions = [{
     message: "What is your interns's email?"
 },{
     type:"input",
-    name: "specific",
+    name: "school",
     message: "What is your intern's school?"
 },{
     type: "list",
@@ -90,8 +90,8 @@ const internQuestions = [{
 inquirer
 .prompt(managerQuestions)
 .then(input => {
-    employeeArr.push(new Manager(input.name, input.id, input.email, input.specific));
-    memberType = inpute.nextRole;
+    employeeArr.push(new Manager(input.name, input.id, input.email, input.office));
+    memberType = input.nextRole;
     if(memberType === "Intern") { prepIntern(); }
     else if (memberType === "Engineer") { prepEngineer(); }
     else {
@@ -109,7 +109,7 @@ function prepEngineer () {
     inquirer
     .prompt(engineerQuestions)
     .then(answer => {
-        employeeArr.push(new Engineer (answer.name, answer.id, answer.email, answer.specific));
+        employeeArr.push(new Engineer (answer.name, answer.id, answer.email, answer.user));
         memberType = answer.nextRole;
         if(memberType === "Intern") {prepIntern(); }
         else if (memberType === "Engineer") { prepEngineer(); }
@@ -123,7 +123,7 @@ function prepEngineer () {
         inquirer
         .prompt(internQuestions)
         .then(answer => {
-            employeeArr.push(new Intern (answer.name, answer.id, answer.email, answer.specific));
+            employeeArr.push(new Intern (answer.name, answer.id, answer.email, answer.school));
             memberType = answer.nextRole;
             if(memberType === "Intern") {prepIntern(); }
             else if (memberType === "Engineer") { prepEngineer(); }
@@ -133,6 +133,7 @@ function prepEngineer () {
             }
         })
         }
+        // adds a number of employees to build a team
         function printArray() {
             for(let j = 0; j< employeeArr.length; j++) {
                 console.log(employeeArr[j]);
