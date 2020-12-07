@@ -12,4 +12,5 @@ runs as a Node CLI to gather info for each employee
 
 working link to a demo video:
 https://drive.google.com/file/d/1x5F8n0HNWMP4OBDFm6_9YzPQJ1hnjI1F/view
-https://user-images.githubusercontent.com/72281065/101298959-87336000-37ed-11eb-9592-ab1c9901abda.JPG
+
+![teamgen](https://user-images.githubusercontent.com/72281065/101298959-87336000-37ed-11eb-9592-ab1c9901abda.JPG)
